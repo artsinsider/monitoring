@@ -85,7 +85,7 @@ export function concatDataPeriodResources(state) {
 /**
  * Формируем данные для таблицы, по периоду со статусом " ОТКРЫТЫЙ "
  */
-export function dataPeriodResources(state) {
+export function dataPeriodResources(state) { debugger;
     const {data, extremeValue, users} = state
     sortData(data)
     console.log('--data--', data[0])

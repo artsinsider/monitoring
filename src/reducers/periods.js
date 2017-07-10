@@ -2,10 +2,13 @@ import { START, FAIL, SUCCESS } from '../constants/actionTypes'
 import * as AC                  from '../constants/actionTypes'
 import * as helper              from './helpers/periodHelper'
 import { notification }         from 'antd'
+import {periodi}                from './dataActon/periodi'
 
 notification.config({ duration: 20, bottom: 50, placement: 'topLeft'})
 const initialState = {
-    periodStatuses: []
+    periodStatuses: [],
+    allPeriods: periodi,
+    periodSelected: periodi[0]
 }
 
 const testPeriodsOpen = (periods) => periods.filter(period => { return period.status.kod == 1}).length === 2

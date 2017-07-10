@@ -9,7 +9,6 @@ export function periodActive(periods) {
     const {allPeriods} = periods
     const lastPeriod = allPeriods.length == 0 ? 0 : allPeriods.length - 1
     const periodOpen = allPeriods.filter(el => el.status.kod === 1)
-
     const periodSelect = () => {
         if(periodOpen.length == 0) {
             return allPeriods[lastPeriod]
@@ -33,10 +32,7 @@ export function addPeriod(periods) {
 
 export function chengePeriod(periods) {
     const {allPeriods, request} = periods
-    console.log('request', request)
-    console.log('allPeriods - 0', allPeriods)
     const updatePeriodList = allPeriods.map(period => period.kod == request.kod ? request : period)
-    console.log('allPeriods - 1', updatePeriodList)
     return ({ ...periods, allPeriods: updatePeriodList, testPeriodsOpen: testPeriodsOpen(updatePeriodList), loading: false })
 }
 

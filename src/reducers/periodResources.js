@@ -9,8 +9,6 @@ import { org }        from './dataActon/organization'
 
 notification.config({ duration: 20, bottom: 50, placement: 'topLeft'})
 
-console.log('periodResources', periodResources)
-
 const initialState = {
     loading: false,
     searchValue: [],
@@ -37,7 +35,7 @@ export default (periodResources = initialState, action) => {
 
         /*** Загружает русурсы по периоду  */
         case AC.LOAD_ALL_PERIOD_RESOURCES + SUCCESS:
-            return periodResourcesHelper.dataPeriodResources({...periodResources, data: periodResources, users: data});
+            return periodResourcesHelper.dataPeriodResources({...periodResources, data: response, users: data});
 
             /*** Загружает русурсы по периоду для простых сотрудников */
         case AC.LOAD_ALL_PERIOD_RESOURCES_FIRST + SUCCESS:

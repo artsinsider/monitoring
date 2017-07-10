@@ -312,9 +312,7 @@ class TableData extends PureComponent {
 
     /** Расчет отклоенения */
     renderDelta( delta, previousValue, nextValue) {
-
          const {extremeValue} = this.props
-        console.log('extremeValue', extremeValue)
          if (delta === ''){ return null }
             const controlTypeDelta = isNil(delta) ? 0.1 : delta;
             const controlDelta = (Math.sign(controlTypeDelta) == 1 ? controlTypeDelta : negate(controlTypeDelta))
@@ -433,7 +431,6 @@ class TableData extends PureComponent {
         const { rows, userInterfaces , resourcesId } = this.props
         const { columnsGrid } = this.state
         const dataSource = rows.map((item) => {
-            console.log('item', item)
             const obj = {};
             Object.keys(item).forEach((key) => {
                 obj[key] = key === 'key' ? item[key] : item[key];
@@ -458,7 +455,7 @@ class TableData extends PureComponent {
                     ref={(table) => this.table = table}
                     size="middle"
                     bordered
-                    dataSource={rows}
+                    dataSource={dataSource}
                     columns={this.identifyRoleUser(columnsGrid)}
                     rowKey="kod"
                     //onRowClick={ (row) => row }

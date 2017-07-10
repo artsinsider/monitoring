@@ -26,7 +26,9 @@ class PeriodSelect extends PureComponent {
     }
 
     render() {
-        const {periods=[], periodSelected, typeResources=[], activPeriod} = this.props;
+        const {periods, periodSelected, typeResources=[], activPeriod} = this.props;
+        console.log('activPeriod', activPeriod)
+        // console.log('periods', periods)
         const { getFieldDecorator } = this.props.form
         const target = this.state.targetValue.length == 0 ? periods.filter(target => target.tip_resursov.kod == activPeriod.tip_resursov.kod) : this.state.targetValue
 

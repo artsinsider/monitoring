@@ -20,12 +20,12 @@ class ActionWrapper extends Component {
         this.props.loadAllResourceTypes()
         this.props.loadAllperiodStatuses()
         this.props.calculationMethod()
-        // if(localStorage.getItem('ogrId')) {
-        //    this.props.loadPeriodsForOrganization()
-        // }
-        // else{
-        //     this.props.role == 'user' ? this.props.loadPeriodsFullUser() : this.props.loadPeriods()
-        // }
+        if(localStorage.getItem('ogrId')) {
+           this.props.loadPeriodsForOrganization()
+        }
+        else{
+            this.props.role == 'user' ? this.props.loadPeriodsFullUser() : this.props.loadPeriods()
+        }
     }
 
     render() {
