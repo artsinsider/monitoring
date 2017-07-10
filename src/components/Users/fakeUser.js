@@ -1,0 +1,32 @@
+export const unUser = [
+    {
+        kod:115,
+        "imya_polzovatelya":"fedoseenkov",
+        "parol":"$2a$10$dNCXhf3hOngrrJ6mlcKqYeVSrZ2Cq3t/D4qA3ppYMgyGJHrB9Dmt2",
+        "email":"не_удалять@n.ru",
+        "telefon":"1",
+        "imya":"Алексей",
+        "otchestvo":"Алексеевич",
+        "familiya":"Федосеенков"
+    },
+    {
+        kod:151,
+        "imya_polzovatelya":"karaeva",
+        "parol":"$2a$10$48M6S9PZNvdBNIS3pb0ZjOw3GOyXWr0VNNleGrdTEZi/SeTQS4Ma.",
+        "email":"не_удалять@n.ru",
+        "telefon":"1",
+        "imya":"Наталья",
+        "otchestvo":"Леонардовна",
+        "familiya":"Караева "
+    },
+    {
+        kod:154,
+        "imya_polzovatelya":"sovko",
+        "parol":"$2a$10$nJqlwA6adRF/DOxUk1VRo.fbcOmnAL4Vse4CN5d3MrgNVTLkDpb7O",
+        "email":"не_удалять@n.ru",
+        "telefon":"1",
+        "imya":"Юлия",
+        "otchestvo":"Николаевна",
+        "familiya":"Совко"
+    }
+]

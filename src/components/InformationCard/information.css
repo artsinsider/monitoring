@@ -1,0 +1,26 @@
+.info .information-card {
+    background: #fff;
+    margin: -3px 0 0 0 ;
+    display: flex;
+}
+
+.info .information-card span {
+}
+
+.information-card .card {
+    width: 273px;
+    font-size: 12px;
+    height: 116px;
+    margin-left: 15px;
+}
+
+.information-card .ant-card-body {
+    padding: 10px 10px;
+}
+
+.card {
+    margin: 5px 0px;
+}
+.card div {
+  margin-bottom: 10px;
+}

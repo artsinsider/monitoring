@@ -1,0 +1,625 @@
+html,
+body {
+  min-height: 100%;
+  height: 100%;
+  font-family: 'PT Sans', sans-serif;
+  overflow: hidden;
+}
+.service,
+#root {
+  height: 100%;
+}
+.ant-form-item {
+  margin-bottom: 0;
+}
+.ant-popover {
+  z-index: 1300;
+}
+.service-name {
+  padding-left: 55px;
+  margin: 15px 14px 15px 7px;
+  background-repeat: no-repeat;
+  background-position: 0px center;
+  background-size: 50px;
+  display: block;
+  width: 200px;
+  height: 50px;
+  padding-top: 10px;
+}
+.service-name small {
+  display: block;
+  margin-top: -3px;
+  font-weight: normal;
+}
+.service-buttons {
+  padding: 18px 0;
+  background: #fff;
+}
+.service-btn {
+  margin-right: 10px;
+}
+
+.service-btn:first-child {
+  margin-left: 0;
+}
+.service-top {
+  display: flex;
+  height: 85px;
+}
+.serv {
+  width: 100%;
+}
+.service-left {
+  width: 315px;
+  padding-right: 5px;
+}
+.service-center {
+  transition: all .1s;
+}
+.service-right {
+  width: 100%;
+  padding: 0 5px;
+}
+.service-body {
+  display: flex;
+}
+.service-body > div {
+  transition: all .1s;
+}
+.service-controls {
+  position: relative;
+  padding-left: 411px;
+  min-height: 28px;
+}
+.button-row {
+  margin: 10px 0;
+}
+
+.ant-tabs-vertical.ant-tabs-left>.ant-tabs-bar .ant-tabs-tab {
+  text-align: center;
+  padding: 8px 8px 8px 6px;
+}
+.ant-tabs-vertical.ant-tabs-left>.ant-tabs-bar .ant-tabs-tab i {
+  margin-right: 0;
+}
+.ant-tabs-vertical.ant-tabs-left>.ant-tabs-content {
+  padding-left: 8px;
+}
+.react-resizable {
+  position: relative;
+  padding-right: 7px;
+}
+.react-resizable-handle {
+  position: absolute;
+  width: 7px;
+  height: 100%;
+  display: block;
+  right: 0;
+  top: 0;
+  cursor: e-resize;
+}
+.react-resizable-handle:before,
+.react-resizable-handle:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 1px;
+  margin-top: -7px;
+  height: 14px;
+  background-color: #555;
+  top: 50%;
+  transition: background-color .4s;
+}
+.react-resizable-handle:before {
+  left: 1px;
+}
+.react-resizable-handle:after {
+  right: 1px;
+}
+.react-resizable-handle:hover:before,
+.react-resizable-handle:hover:after {
+  background-color: #108EE9;
+}
+
+.griddle table {
+  border-spacing: 0px;
+}
+.griddle thead th,
+.griddle thead td {
+  border-right: 1px solid #e9e9e9 !important;
+  border-bottom: 1px solid #e9e9e9 !important;
+  text-align: left;
+  padding: 5px 8px !important;
+  font-size: 12px !important;
+  background-color: #f7f7f7 !important;
+  line-height: 1.2em;
+}
+.griddle thead td {
+  text-align: center;
+}
+.griddle thead th span {
+  color: rgba(0,0,0, .6)
+}
+
+.dynamic-delete-button {
+  cursor: pointer;
+  position: relative;
+  top: 4px;
+  font-size: 24px;
+  color: #999;
+  transition: all .3s;
+}
+.dynamic-delete-button:hover {
+  color: #777;
+}
+.dynamic-delete-button[disabled] {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.button-plus, .button-minus{
+  text-align: center;
+  font-size: 14px;
+  font-family: inherit;
+  margin-top: 10px;
+}
+
+.button-minus{
+  margin-bottom: 15px;
+  margin-top: -5px;
+}
+
+.button-submit-end{
+  padding: 15px 0;
+  text-align: center;
+}
+
+.react-grid-Header{
+  height: 50px !important;
+}
+
+.react-grid-Cell:not(.editing) .react-grid-Cell__value{
+  text-align: center;
+}
+
+.react-grid-HeaderCell-sortable, .react-grid-HeaderCell {
+  text-align: center;
+}
+
+.react-grid-HeaderCell {
+  white-space: initial;
+}
+
+.ant-spin-lg{
+  position: relative;
+  vertical-align: middle;
+  top: 220px;
+}
+
+.ant-spin-nested-loading>div>.ant-spin .ant-spin-text{
+  margin-top: 0 !important;
+  margin-left: 0 !important;
+}
+
+.modal-period-form .ant-spin-nested-loading>div>.ant-spin .ant-spin-text{
+  margin-top: 0;
+  margin-left: 0;
+}
+.ant-modal-mask {
+  background-color: rgba(55, 55, 55, 0.85);
+}
+
+.ant-spin-lg .ant-spin-dot{
+  width: 50px;
+  height: 50px;
+}
+
+.ant-spin-lg .ant-spin-dot i {
+  width: 25px;
+  height: 25px;
+}
+
+.header-grid{
+  text-align: center;
+  padding: 5px;
+  background: #625238;
+  border-radius: 5px 5px 0 0;
+  font-size: 15px;
+  color: #fff;
+}
+
+.footer-bar {
+  background-color: #888888;
+  padding: 5px 10px;
+  list-style-type: none;
+  color: #fff;
+  font-size: 13px;
+}
+
+.organization{
+  color: #fff;
+  font-size: 15px;
+  float: left;
+  margin-left: 25px;
+}
+
+.exit{
+  color: #fff;
+  font-size: 15px;
+  float: right;
+  margin: 0 25px;
+}
+.exit span {
+  margin: 0 25px;
+}
+
+.ant-input-preSuffix-wrapper .ant-input:not(:last-child){
+  padding-left: 30px;
+}
+
+.ant-input-affix-wrapper .ant-input:not(:last-child){
+  padding-right: 24px;
+  padding-left: 24px;
+}
+.search-line{
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+  /*margin-left: 15px;*/
+}
+
+.search-line .ant-btn-primary {
+  border:  none;
+  border-radius: 0;
+  background: none;
+  position: absolute;
+  z-index: 10;
+  color: #4d4d4d;
+}
+
+.search-line .ant-btn .anticon {
+  margin-top: 5px;
+  margin-left: -4px;
+}
+
+.save-add-user {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.information-line{
+  color: #4d4d4d;
+  font-size: 15px;
+  display: inline;
+}
+
+.modal-progress .ant-modal-header{
+  display: none;
+}
+
+.ant-modal-header {
+  padding: 14px 16px;
+  border-radius: 4px 4px 0 0;
+  background: rgb(16, 142, 233);
+  color: rgb(255, 255, 255);
+  box-shadow: 0px 1px 0px #9e9e9e;
+  border-bottom: none;
+}
+
+.ant-modal-title {
+  margin: 0;
+  font-size: 15px;
+  line-height: 21px;
+  font-weight: 500;
+  color: rgb(255, 255, 255);
+  letter-spacing: 0.7px;
+}
+
+.modal-progress .ant-modal-close-x{
+  display: none;
+}
+.ant-modal-close{
+  color: #fff;
+}
+
+.group-selected{
+  display: inline;
+}
+
+.ant-select-dropdown-menu-item-selected, .ant-select-dropdown-menu-item-selected:hover {
+  color : rgb(16, 142, 233);
+}
+
+.ant-tree {
+  overflow: hidden;
+}
+
+.serv .ant-tabs-bar {
+  margin-bottom: 0px;
+}
+
+.serv .ant-tabs-nav-container {
+  line-height: 0.2;
+}
+
+.select_in_grid .ant-select-selection {
+  border: none !important;
+}
+
+.ant-notification-notice {
+  border: 1px solid rgba(138, 138, 138, 0.4);
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.ant-notification-notice-with-icon .ant-notification-notice-message {
+  font-size: 17px;
+}
+.ant-notification-notice-with-icon .ant-notification-notice-description {
+  font-size: 15px;
+}
+
+.ant-confirm-confirm .ant-confirm-body>.anticon, .ant-confirm-warning .ant-confirm-body>.anticon {
+  color: #ff2626;
+  font-size: 35px;
+}
+
+.bottom-menu {
+  background: white;
+  padding-top: 4px;
+  border-top: 1px solid #d4d4d4;
+  list-style-type: none;
+  margin-left: -10px;
+}
+
+.react-grid-HeaderRow {
+  position: initial !important;
+  color: #4d4d4d;
+  font-size: 11px;
+}
+
+.front-table .ant-collapse-borderless>.ant-collapse-item>.ant-collapse-content {
+  background-color: rgba(255, 255, 255, 0.98);
+  /*border: 1px solid #d9d9d9;*/
+  position: absolute;
+  z-index: 999;
+  padding: 0;
+}
+
+.front-table .ant-collapse-content>.ant-collapse-content-box {
+  padding: 0;
+}
+
+.navigation-services {
+  border-top: 3px solid #108ee9;
+  display: flex;
+  flex-flow: row nowrap;
+  padding-left: 20px;
+  position: relative;
+}
+
+.navigation-services a img {
+  position: absolute;
+  bottom: -50px;
+}
+
+.navigation-services .img-ursip{
+  width: 60px;
+  right: 10px;
+}
+
+.navigation-services .img-mon{
+  width: 53px;
+  left: 190px;
+  position: absolute;
+  bottom: -47px;
+  height: 45px;
+  background-size: 53px 53px;
+  background-image: url("../public/static/img/mon_black.png");
+  transition: all .4s ease-out;
+  opacity: 0.7;
+}
+.navigation-services .img-mon.active {
+  background-image: url("../public/static/img/mon_color.png")
+}
+
+.navigation-services .img-mon:hover {
+  background-image: url("../public/static/img/mon_color.png");
+  opacity: 0.9;
+}
+
+.navigation-services .img-auth{
+  width: 44px;
+  left: 25px;
+  position: absolute;
+  bottom: -49px;
+  height: 44px;
+  background-size: 45px 45px;
+  background-image: url("../public/static/img/door_black.png");
+  transition: all .4s ease-out;
+  opacity: 0.7;
+}
+
+.navigation-services .img-auth.active {
+  background-image: url("../public/static/img/door_color.png")
+}
+
+.navigation-services .img-auth:hover {
+  background-image: url("../public/static/img/door_color.png");
+  opacity: 0.9;
+}
+
+.navigation-services .img-organization{
+  width: 45px;
+  left: 110px;
+  position: absolute;
+  bottom: -50px;
+  height: 45px;
+  background-size: 45px 45px;
+  background-image: url("../public/static/img/book_black.png");
+  transition: all .4s ease-out;
+  opacity: 0.7;
+}
+.navigation-services .img-organization.active{
+  background-image: url("../public/static/img/book_color.png");
+}
+
+.navigation-services .img-organization:hover {
+  background-image: url("../public/static/img/book_color.png");
+  opacity: 0.9;
+}
+
+.navigation-services .img-machine{
+  width: 45px;
+  left: 270px;
+  position: absolute;
+  bottom: -49px;
+  height: 45px;
+  background-size: 45px 45px;
+  background-image: url("../public/static/img/machine_balck.png");
+  transition: all .4s ease-out;
+  opacity: 0.8;
+}
+.navigation-services .img-machine.active {
+  background-image: url("../public/static/img/machine_color.png");
+}
+
+.navigation-services .img-machine:hover {
+  background-image: url("../public/static/img/machine_color.png");
+  opacity: 0.9;
+}
+
+a.logo-container{
+  display: flex;
+  flex-flow: row nowrap;
+  padding-left: 20px;
+  position: relative;
+}
+
+.ant-card:hover {
+  box-shadow: none;
+  border: 1px solid #e7eaec;
+}
+
+.form-group .input-sm {
+  padding: 5px;
+  border-radius: 4px;
+  border: 1px solid #d4d4d4;
+  width: 100%;
+}
+
+.react-grid-Toolbar{
+  border-color: rgba(231, 234, 236, 0);
+  position: absolute;
+  background: none;
+  z-index: 999;
+  bottom: 0;
+  right: -7px;
+}
+
+.react-grid-Toolbar .btn{
+  padding: 5px 15px;
+  background: #108ee9;
+  border: none;
+  border-radius: 3px;
+  margin-top: 3px;
+  color: #fff;
+  font-size: 13px;
+  transition: all .4s ease-out;
+}
+
+.react-grid-Toolbar .btn:hover{
+  border: none;
+  color: #fff;
+  background: #49a9ee;
+}
+
+.resources-card .ant-layout-sider {
+  flex: 0 0 150px !important;
+}
+.resources-card hr {
+  border: 1px solid #d4d4d4;
+  margin: 15px 0
+}
+
+.ant-card:hover {
+  box-shadow: none !important;
+}
+
+.ant-card-head-title {
+  width: 100%;
+}
+
+.card .ant-card-body div {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+}
+
+.ant-layout-footer {
+  margin: 0;
+  padding: 0;
+}
+
+.editable-row-text {
+  padding: 5px;
+}
+
+.editable-row-operations a {
+  margin-right: 8px;
+}
+
+.highlight td {
+  background-color: rgba(17, 156, 255, 0.23);
+}
+
+.propgressss {
+  width: 500px;
+  background: #ffffff;
+  padding: 15px;
+  border: 1px solid #d4d4d4;
+  border-radius: 44px;
+  vertical-align: middle;
+  margin: 20% 35%;
+  position: relative;
+}
+
+.info {
+  position: absolute;
+  right: 10px;
+}
+
+.ant-card-bordered {
+  border: 1px solid #d4d4d4;
+}
+
+.ant-table-thead>tr>th .anticon-filter {
+  margin-left: 0;
+}
+
+.user-list-resources-by-sections {
+  margin-left: 15px;
+  position: relative;
+  float: right;
+  top: 3px;
+  font-size: 15px;
+}
+
+.user-list-resources-by-sections:hover {
+  color: #108ee9;
+  cursor: pointer;
+}
+
+
+.full-description {
+  position: absolute;
+  margin: 0 25%;
+  margin-top: 20px;
+  font-size: 15px;
+}
+/*
+  Сабменю выбора формата файла для получения отчета, нет доступа к элементу
+  из-за магии антда 
+*/
+.ant-dropdown-menu-submenu-vertical>.ant-dropdown-menu {
+  min-width: 0
+}

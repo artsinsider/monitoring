@@ -1,0 +1,72 @@
+.render-price {
+    font-weight: 800;
+    float: right;
+    text-shadow: -1px 1px 2px #d4d4d4;
+}
+
+.render-input-price {
+    float: right;
+    display: flex;
+}
+
+.render-input-price i {
+    margin-left: 7px;
+    margin-top: 6px;
+    cursor: pointer;
+    position: absolute;
+    z-index: 999;
+}
+
+.render-input-price i:hover{
+    color: #108ee9;
+}
+
+.render-input-price .ant-input-number{
+    width: 100%;
+}
+
+.render-input-price .ant-input-number-input{
+    padding: 0 5px 0 20px;
+}
+
+.handler-card {
+    cursor: pointer;
+    padding:  5px 0px;
+    position: relative;
+}
+
+.handler-card:hover {
+    color: #108ee9;
+}
+
+.red-switch.ant-switch-checked {
+    background-color: #ff5b5f !important;
+    border-color: #ff5b5f !important;
+}
+
+.ant-table-tbody>tr>td.ant-table-selection-column, .ant-table-thead>tr>th.ant-table-selection-column{
+    text-align: center !important;
+    min-width: 40px !important;
+    width: 40px !important;
+}
+
+.ant-table-tbody > tr > td {
+    padding: 5px;
+}
+
+.ant-table {
+    border-bottom: 1px solid #d4d4d4;
+}
+
+.delete-resources-table {
+    cursor: pointer;
+    color: #ff5b5f;
+    font-size: 12px;
+    margin-left: 35%;
+}
+.btn-hidden-wrap {
+    margin: 0px !important;
+    padding: 0px !important;
+    border: 0px !important;
+    background-color: transparent !important;
+}

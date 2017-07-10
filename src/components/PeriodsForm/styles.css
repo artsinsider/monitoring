@@ -1,0 +1,64 @@
+.block-add {
+  padding: 10px 15px 20px 50px;
+  border: 1px solid #d9d9d9;
+  border-radius: 3px;
+  box-shadow: 0px 1px 5px #d4d4d4;
+}
+.add {
+  position: relative;
+  float: right;
+  left: -25px;
+  bottom: 28px;
+}
+
+.field, .ant-calendar-picker {
+  width: 230px !important;
+}
+
+.table {
+  margin-top: 20px;
+}
+
+.editable-cell {
+  position: relative;
+}
+
+.editable-cell-input-wrapper,
+.editable-cell-text-wrapper {
+  padding-right: 24px;
+  text-align: left;
+}
+
+.editable-cell-text-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 24px 5px 5px;
+}
+
+.editable-cell-icon,
+.editable-cell-icon-check {
+  cursor: pointer;
+}
+
+.editable-cell-icon {
+  line-height: 18px;
+  display: none;
+}
+
+.editable-cell-icon-check {
+  line-height: 28px;
+}
+
+.editable-cell:hover .editable-cell-icon {
+  display: inline-block;
+}
+
+.editable-cell-icon:hover,
+.editable-cell-icon-check:hover {
+  color: #108ee9;
+}
+
+.ant-table-row > td {
+  text-align: left !important;
+}

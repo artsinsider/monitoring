@@ -1,0 +1,1 @@
+export const mmethod = [{"kod":1,"nazvanie":"min","opisanie":"По минимальной цене","activen":false},{"kod":2,"nazvanie":"avg","opisanie":"По средней цене","activen":true}]

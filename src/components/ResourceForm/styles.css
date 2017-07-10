@@ -1,0 +1,24 @@
+.form-flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-column { width: 45%; }
+
+.ant-switch-checked {
+    border-color: rgb(226, 226, 61) !important;
+    background-color: rgb(230, 230, 61) !important;
+}
+.ant-switch-checked > .ant-switch-inner {
+  color: #444444;
+}
+.form-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.form-switch {
+    display: flex;
+    align-items: center;
+}
