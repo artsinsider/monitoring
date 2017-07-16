@@ -23,18 +23,6 @@ class SearchFilter extends Component {
     }
     this.handleChange = debounce(500, this.handleChange)
   }
-  /** * Отправляет значение поиска */
-  // searchInGrid = (val) => {
-  //     const {searchWholeTable} = this.props
-  //     searchWholeTable(val.toLowerCase())
-  // }
-
-   //  /**  Получеине данных input */
-   // getSearchValue = (e) => {
-   //  const {value} = e.target
-   //     this.setState({value:value })
-   // } debounce(500,true, this.searchInGrid)}
-
     /**  Сбрасываем значение инпута */
    clearValue = () => {
      this.input.input.refs.input.value = ''
@@ -42,7 +30,7 @@ class SearchFilter extends Component {
      this.props.resetSearch()
    }
 
-   handleChange = (event) => {
+   handleChange = () => {
      const currentSearchValue = this.input.input.refs.input.value //ouch
      this.props.searchWholeTable(currentSearchValue.toLowerCase())
      this.setState({ value: currentSearchValue })
@@ -51,19 +39,17 @@ class SearchFilter extends Component {
   render() {
     return (
       <div className="search-line" >
-          { this.state.value != ''
+          { this.state.value
             ? <Button onClick={this.clearValue} type="primary">
                 <Icon type="close" />
               </Button>
             : null}
          <Search  ref={(input) => this.input = input}
                   placeholder="Глобальный поиск по таблице ресурсов"
-//Footer style    style={{width: 350, color: '#49a9ee'}}
-/*Periods style*/ style={styles.searchbar}
+                  style={styles.searchbar}
                   onChange={e => this.handleChange(e)}
          />
       </div>
-
     )
   }
 }

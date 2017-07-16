@@ -9,8 +9,6 @@ const initialState = {
   dataFiltred: [],
   filterStatus: false,
   areAllSelected: false,
-  columnNames: ['nazvanie', 'polnoe_nazvanie', 'nachalnaya_cena', 'izmenennaya_cena', 'delta', 'primechanie', 'primechanie', 'harakteristika', 'kod_okp', 'kod_okpd2', 'kod_tsn', 'massa_gross', 'massa_netto','mera','s_transportnymi_rashodami', 'sotrudnik', 'status', 'organization' ],
-  columnsSelected: JSON.parse(localStorage.getItem('columnsSelected')) || ['nazvanie', 'polnoe_nazvanie', 'nachalnaya_cena', 'izmenennaya_cena', 'delta', 'primechanie', 'primechanie', 'harakteristika', 'kod_okp', 'kod_okpd2', 'kod_tsn', 'massa_gross', 'massa_netto','mera','s_transportnymi_rashodami', 'sotrudnik', 'status', 'organization' ],
   newResources:[],
   loading: false,
   visibleModal:false,
@@ -76,7 +74,6 @@ export default (resources = initialState, action) => {
         case RES.LOAD_EDITING_RESOURCES + START:
         case RES.UPDATE_RESOURCES + START:
         case RES.DELETE_RESOURCES + START:
-        // case RES.CHANGE_STATUS_RESOURCES + START:
         case RES.FIND_TSN + START:
             return {...resources}
 
@@ -99,8 +96,6 @@ export default (resources = initialState, action) => {
             return ({...resources , editingResources: response})
 
         /** Редактирование ресурса ресурса*/
-        // case RES.OPEN_UPDATE_RESOURCES + START:
-        //      return ({...resources, visibleModal: true})
         case RES.OPEN_UPDATE_RESOURCES + SUCCESS:
             return ({...resources , resourcesData: response[0], visibleModal: true})
 
@@ -136,11 +131,6 @@ export default (resources = initialState, action) => {
         case RES.CLOSE_VIEW_RESOURCES :
             return ({...resources , viewResourcesData: {}, visibleModalView: false, resourcesId: null})
 
-        // case RES.CHANGE_STATUS_RESOURCES + SUCCESS:
-        //     notification.warning({message: 'Удаление', description: `Ресурс ${payload.nazvanie} удален` })
-        //     return deleteResources({...resources , deleteResourcesData: payload })
-
-
         case RES.CANCEL_DELETE_RESOURCES:
             notification.destroy()
             return ({...resources , visibleModal: false})
@@ -153,7 +143,6 @@ export default (resources = initialState, action) => {
         case RES.UPDATE_RESOURCES + FAIL:
         case RES.DELETE_RESOURCES + FAIL:
         case RES.FIND_TSN + FAIL:
-        // case RES.CHANGE_STATUS_RESOURCES + FAIL:
             notification.error({message: error.status , description: error.responseJSON.opisanie_oshibki })
             return {...resources, dataFail: response , resourcesData: false, resourcesUpdate: false }
 

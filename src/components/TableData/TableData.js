@@ -4,7 +4,7 @@ import { Table,  Switch, Icon, Input, Checkbox, Popconfirm, Button, Dropdown, Me
 import * as periodResources                                                          from '../../AC/periodResources'
 import * as resources                                                                from '../../AC/resources'
 import SearchFilter                                                                  from './SearchFilter'
-import { isEmpty,isNil, negate , find, propEq, slice}                               from 'ramda'
+import { isEmpty,isNil, negate , find, propEq }                                      from 'ramda'
 import {columns} from './columns'
 import './table.css'
 import { priceFormat } from '../../utils'
@@ -29,24 +29,6 @@ class TableData extends PureComponent {
                     render: (text, record, index) => (<div className="handler-card">{text}</div>),
                     onCellClick: (record, event) => this.viweeResources(record.kodResursPeriod),
                     sorter: (a, b) => this.sorterDataTableForBool(a, b, 'kod_tsn')
-                    // filterDropdown: (
-                    //     <div className="custom-filter-dropdown">
-                    //         <Input
-                    //             ref={ele => this.searchInput = ele}
-                    //             placeholder="Search name"
-                    //             value={this.searchText}
-                    //             onChange={this.onInputChange}
-                    //             onPressEnter={this.onSearch}
-                    //         />
-                    //         <Button type="primary" onClick={this.onSearch}>Search</Button>
-                    //     </div>
-                    // ),
-                    // filterIcon: <Icon type="smile-o" style={{ color: this.state.filtered ? '#108ee9' : '#aaa' }} />,
-                    // filterDropdownVisible: this.state.filterDropdownVisible,
-                    // onFilterDropdownVisibleChange: (visible) => {
-                    //     this.setState({
-                    //         filterDropdownVisible: visible,
-                    //     }, () => this.searchInput.focus())}
                 },
                 {
                     title: 'Наименование ресурса',
@@ -245,18 +227,7 @@ class TableData extends PureComponent {
                             </Button>
                         </Popconfirm>
                     )
-                },
-                // {
-                //   title: 'Ред.',
-                //   dataIndex: 'edit',
-                //   key: null,
-                //   sortIndex: 13,
-                //   width: 30,
-                //   render: (text, record, index) => (
-                //             <Button className="btn-hidden-wrap" onClick={() => {this.props.openUpdateResources(record.key)}} disabled={this.props.activePeriod.status.kod === 3}>
-                //                 <Icon className="edit-resources-table" type="edit" />
-                //             </Button>)
-                // }
+                }
             ]
         };
 
@@ -363,8 +334,6 @@ class TableData extends PureComponent {
     
     handleFocus = (event) => {
       event.persist()
-      // Still not focused here from autofocus, need to do this through
-      // setTimeout to select the text in input
       setTimeout(function() { event.target.select() }, 50)
     }
     
@@ -393,24 +362,13 @@ class TableData extends PureComponent {
     }
 
     identifyRoleUser = (columns) => {
-        // const { role } = this.props.userInterfaces
-        // if (role === 'leader') {
-        //   return columns
-        // } else if (role === 'chief') {
-        //   return columns.filter(col => (col.dataIndex !== 'edit'))
-        // }
-        // return columns.filter(col => (col.dataIndex !== 'edit' && col.dataIndex !== 'sotrudnik'))
         const { role } = this.props.userInterfaces
         return role === 'user' ? columns.filter(col => (col.dataIndex !== 'sotrudnik')) : columns
     }
 
     render() {
         const { selectedRowKeys } = this.state;
-        /** TO DO -- может понадобиться*/
-        //rowSelection={ rowSelection }
         const rowSelection = {
-            // onSelect: (record, selected) => console.log('record',record, selected),
-            // onSelectAll: (selected, selectedRows) => console.log('selected, selectedRows, changeRows',selected, selectedRows),
             selectedRowKeys,
             onChange: this.onSelectChange,
             selections: [{
@@ -447,7 +405,7 @@ class TableData extends PureComponent {
             defaultPageSize: 100
         }
 
-        /** TO DO убрал футер -- возможно временно*/
+        /** TO DO убрал футер из за нестыковки IU*/
         // footer={ () => this.renderFoterList() }
 
         return (

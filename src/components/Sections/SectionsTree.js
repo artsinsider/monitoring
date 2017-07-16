@@ -9,7 +9,6 @@ import { loadSectionsByParentId } from '../../AC/sections'
 import {isEmpty}                 from 'ramda'
 import {interfaceSettings}   from  '../../config/InterfaceSettings'
 import Treev3 from './Treev3'
-//const TreeNode = Tree.TreeNode
 
 class SectionsTree extends Component {
     state = {
@@ -33,27 +32,6 @@ class SectionsTree extends Component {
         return this.props.loadSectionsResources(all)
     }
 
-    // onLoadData = (treeNode) => {
-    //     //TBD: Rewrite to check, if sections.key isLeaf is null or false.
-    //     // If false => load stuff
-    //     // If true => reject
-    //     const { sections } = this.props
-    //     const key = treeNode.props.eventKey;
-    //     return new Promise((resolve, reject) => {
-    //         const isAlreadyLoaded = sections.filter(item => (item.roditel === +key))
-    //         if (isEmpty(isAlreadyLoaded)) {
-    //             this.props.loadSectionsByParentId(key)
-    //             resolve();
-    //         } else {
-    //             reject()
-    //         }
-    //     });
-    // }
-
-    /** TO DO убрал чек боксы -- возможно временно */
-        // checkable={userInterfaces.sectionCheckEmployee}
-        // checkStrictly
-
     render() {
         const { loading ,userInterfaces} = this.props
         return (
@@ -70,23 +48,6 @@ class SectionsTree extends Component {
             </Spin>
         )
     }
-
-    /*renderNestedList(data, parentId) {
-        const list = []
-        data.forEach(item => {
-            const { roditel, kod, nazvanie } = item
-            if (roditel === parentId) {
-                const children = this.renderNestedList(data, kod)
-                const name=  nazvanie == '' ? 'Не назначено' : nazvanie
-                list.push(
-                    children && children.length
-                        ? <TreeNode key={kod} title={name} >{children}</TreeNode>
-                        : <TreeNode key={kod} title={name} />
-                )
-            }
-        })
-        return list
-    } */
 
     onChange = (e) => {
         const value = e.target.value
@@ -108,16 +69,3 @@ export default connect(state => ({
     selectedPeriod: state.periods.periodSelected,
     user: state.user.userData
 }),{ ...actionCreators, ...users , loadSectionsResources, loadSectionsResourcesForUser, loadSectionsByParentId })(SectionsTree)
-
-//checkable -- ÑƒÐ±Ñ€Ð°Ð» Ñ‡ÐµÐ±Ð¾ÐºÑÑ‹
-//onDrop={e => this.drag(e)} -- ÑƒÐ±Ñ€Ð°Ð» drag&drop
-//   draggable
-
-
-// drag(info) {
-//     const dropKey = info.node.props.eventKey
-//     const dragKey = info.dragNode.props.eventKey
-//     const section = this.props.sections.filter(section => section.kod === +dragKey)[0].toObject()
-//     section.roditel = +dropKey
-//     this.props.updateSection(section)
-// }

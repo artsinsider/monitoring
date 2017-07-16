@@ -26,12 +26,6 @@ export const loadSectionsByUserId = (parentId) => ({
     }
 })
 
-// export const loadAllSectionsById = (type) => ({
-//     type: LOAD_ALL_SECTIONS_BY_ID,
-//     $api: {
-//         url: MON_API_HOST + `razdeli/zapros?tip_resursov=${type}`
-//     }
-// })
 export const loadSectionsByParentId = parentId => ({
     type: LOAD_SECTIONS_BY_PARENTID,
     payload: parentId,

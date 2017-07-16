@@ -1,1 +1,0 @@
-export const periodstatusi = [{"kod":1,"nazvanie":"Открытый "},{"kod":2,"nazvanie":"Предварительно закрытый"},{"kod":3,"nazvanie":"Закрытый"}]

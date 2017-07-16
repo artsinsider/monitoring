@@ -5,34 +5,6 @@ import {negate, isNil}             from 'ramda'
 import * as resources              from '../../AC/resources'
 import {transportationCostsUpdate} from '../../AC/periodResources'
 
-// function selectedStatus1(){ connect(state =>({
-//     resourcesFoolStatus: state.resources.resourcesFoolStatus
-// }) , { chengeStatusResources })( React.createClass({
-//
-//     render() {
-//         const {value, chengeStatusResources, resourcesFoolStatus} = this.props
-//         console.log(this.props)
-//         return(
-//             <div>a</div>
-//         )}
-// }))}
-//
-//
-// /** Форматтер для меню статусов */
-// const selectedStatus = ( React.createClass({
-//     render() {
-//         const {value} = this.props
-//
-//         return(
-//             <div className="select_in_grid" onClick={() => selectedStatus1(value.resursKod)}>
-//                 {value.status}
-//             </div>
-//         )}
-// }))
-
-
-
-
 /** Форматтер для меню статусов */
 const selectedStatus = connect(state =>({
     resourcesFoolStatus: state.resources.resourcesFoolStatus
@@ -179,15 +151,6 @@ export const columns =  [
         filterable: true,
         sortIndex: 2
     },
-    // {
-    //     key: 'polnoe_nazvanie',
-    //     name: 'Полное наименование',
-    //     resizable: true,
-    //     editable: false,
-    //     sortable: false,
-    //     filterable: true,
-    //     sortIndex: 3
-    // },
     {
         key: 'nachalnaya_cena',
         name: 'Цена за прошлый период',
@@ -217,51 +180,6 @@ export const columns =  [
         sortIndex: 6,
         width: 75
     },
-    // {
-    //     key: 'kod_okp',
-    //     name: 'Код ОКП',
-    //     resizable: true,
-    //     editable: false,
-    //     sortable: true,
-    //     filterable: true,
-    //     sortIndex: 7
-    // },{
-    //     key: 'kod_okpd2',
-    //     name: 'Код ОКПД2',
-    //     resizable: true,
-    //     editable: false,
-    //     sortable: true,
-    //     filterable: true,
-    //     sortIndex: 8
-    // },
-    // {
-    //     key: 'massa_gross',
-    //     name: 'Масса гросс',
-    //     resizable: true,
-    //     editable: false,
-    //     sortable: true,
-    //     filterable: true,
-    //     sortIndex: 9,
-    //     width: 75
-    // },{
-    //     key: 'massa_netto',
-    //     name: 'Масса нетто',
-    //     resizable: true,
-    //     editable: false,
-    //     sortable: true,
-    //     filterable: true,
-    //     sortIndex: 10,
-    //     width: 75
-    // },{
-    //     key: 'mera',
-    //     name: 'Ед. изм.',
-    //     resizable: false,
-    //     editable: false,
-    //     sortable: true,
-    //     filterable: true,
-    //     sortIndex: 11,
-    //     width: 50
-    // },
     {
         key: 's_transportnymi_rashodami',
         name: 'Транc. расходы',
@@ -273,27 +191,7 @@ export const columns =  [
         filterable: true,
         sortIndex: 12
     },
-    // {
-    //     key: 'sotrudnik',
-    //     name: 'Сотрудник',
-    //     resizable: true,
-    //     editable: false,
-    //     sortable: true,
-    //     formatter: node,
-    //     filterable: true,
-    //     sortIndex: 13
-    // },
-    // {
-    //     key: 'status',
-    //     name: 'Статус',
-    //     resizable: true,
-    //     editable: true,
-    //     sortable: false,
-    //     editor: selectedStatus,
-    //     formatter: selectedStatus,
-    //     filterable: true,
-    //     sortIndex: 14
-    // },
+
     {
         key: 'primechanie',
         name: 'Примечание',
@@ -326,37 +224,7 @@ export const columns =  [
         filterable: true,
         sortIndex: 15
 
-    },
-    // {
-    //     key: 'view',
-    //     name: 'Просмотр',
-    //     resizable: true,
-    //     editable: false,
-    //     sortable: false,
-    //     formatter: view,
-    //     sortIndex: 16,
-    //     filterable: false,
-    // },
-    // {
-    //     key: 'edit',
-    //     name: 'Ред.',
-    //     resizable: true,
-    //     editable: false,
-    //     sortable: false,
-    //     formatter: edit,
-    //     sortIndex: 17,
-    //     filterable: false,
-    // },
-    // {
-    //     key: 'delete',
-    //     name: 'Удал.',
-    //     resizable: true,
-    //     editable: false,
-    //     sortable: false,
-    //     formatter: deleted,
-    //     sortIndex: 18,
-    //     filterable: false,
-    // }
+    }
 ]
 
 

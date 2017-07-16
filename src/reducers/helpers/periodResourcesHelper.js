@@ -4,7 +4,7 @@ import {unUser}                    from '../../components/Users/fakeUser'
 notification.config({ duration: 20, bottom: 50, placement: 'topLeft'})
 
 /**
- * Редактирования выбранного ресурса для отправки на бек
+ * Редактирования выбранного ресурса //old
  */
 export function  selectedtResources(state) {
     const {dataResources, getResourcesOnUpdated } = state
@@ -17,7 +17,7 @@ export function  selectedtResources(state) {
 }
 
 /**
- * Редактирование цены, выбранного ресурса на фронте
+ * Редактирование цены //old
  */
 export function updateSelectedtResources(state) {
     const { dataResources, data ,extremeValue} = state
@@ -88,7 +88,6 @@ export function concatDataPeriodResources(state) {
 export function dataPeriodResources(state) { debugger;
     const {data, extremeValue, users} = state
     sortData(data)
-    console.log('--data--', data[0])
     const viewResourcesData = data[0]
     const periodResources = []
     data.map( (el,i) => { buildMap(periodResources, el, i, state, extremeValue) })
@@ -145,7 +144,7 @@ export function updateResources(state) {
 /** Перезаписываем данные в стейт*/
 export function updateDataInTable(state) {
     const {receivedResources, extremeValue, data, props,} = state
-    if(props == 'udalena') {
+    if(props == 'deleted') {
         notification.info({message: 'Операция удаления прошла успешно.' , description: `Цена на ресурс ${receivedResources.resurs.nazvanie}.`})
         return({ ...state, data: data.filter(resources => resources.kodResursPeriod.value != receivedResources.kod), getResourcesUpdated:{}, props:''})
     }
@@ -207,28 +206,3 @@ export function deleteResources(state) {
     const excludeResource = data.filter( resources =>  resources.kod !== deleteResourcesData.kod )
     return({...state, data: sortData(excludeResource), deleteResourcesData:{}})
 }
-
-// kod: el.resurs.kod,
-//     kodPeriod: el.period.kod,
-//     kodResursPeriod: el.kod,
-//     nazvanie: el.resurs.nazvanie,
-//     // polnoe_nazvanie: el.resurs.polnoe_nazvanie,
-//     nachalnaya_cena: el.nachalnaya_cena/100 ,
-//     izmenennaya_cena: el.izmenennaya_cena/100 ,
-//     delta: (() => el.izmenennaya_cena == null ? '' : calculatingDelta( el.nachalnaya_cena, el.izmenennaya_cena, extremeValue ))(),
-//     primechanie: el.resurs.primechanie,
-//     harakteristika: el.resurs.harakteristika,
-//     // kod_okp: el.resurs.kod_okp,
-//     // kod_okpd2: el.resurs.kod_okpd2,
-//     kod_tsn: el.resurs.kod_tsn,
-//     // massa_gross: el.resurs.massa_gross,
-//     // massa_netto: el.resurs.massa_netto,
-//     // mera: el.resurs.mera.code,
-//     s_transportnymi_rashodami: {transportation: el.s_transportnymi_rashodami, resursKod: el.kod},
-// // sotrudnik: (() =>  foundUsers(state, el.resurs.sotrudnik))(),
-// status: el.resurs.status.kod,
-//     organization: (() =>  foundOrganization(state, el.organizaciya))(),
-//     proizvoditel: ' ',
-// // view:  el.resurs.kod,
-// // edit:  el.resurs,
-// // delete: el.resurs,

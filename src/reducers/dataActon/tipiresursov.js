@@ -1,1 +1,0 @@
-export const tipiresursov = [{"kod":4,"nazvanie":"Материалы"},{"kod":5,"nazvanie":"Оборудование"}]

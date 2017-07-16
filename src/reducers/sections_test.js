@@ -52,8 +52,6 @@ export default (sections = new initialState(), action) => {
 
     switch (type) {
         case AC.LOAD_ALL_SECTIONS + START:
-        // case LOAD_ALL_SECTIONS_BY_ID + START:
-
             return sections.set('loading', true)
 
         case AC.LOAD_SECTIONS_BY_USER_ID + START:

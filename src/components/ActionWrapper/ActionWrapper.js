@@ -24,7 +24,7 @@ class ActionWrapper extends Component {
            this.props.loadPeriodsForOrganization()
         }
         else{
-            this.props.role == 'user' ? this.props.loadPeriodsFullUser() : this.props.loadPeriods()
+            this.props.role ? this.props.loadPeriodsFullUser() : this.props.loadPeriods()
         }
     }
 
@@ -47,8 +47,3 @@ export default connect(state => ({
     refreshToken,
     calculationMethod
 })(ActionWrapper)
-
-// this.props.loadAllUsers()
-// this.props.loadAllOrganization()
-// this.props.loadNewResources()
-// this.props.loadEditingResources()

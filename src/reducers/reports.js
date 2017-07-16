@@ -41,7 +41,6 @@ export default (reports = initialState, action) => {
             return findActivMethod({...reports, calculationMethod: response})
 
         case AC.CHANGE_CALCULATION_METHOD + SUCCESS:
-            console.log('response', response)
             notification.info({message: 'Метод расчета был изменен' , description: `Активнй метод расчета - ${response.opisanie}`})
             return methodReplacement({...reports, calculationMethodReplacement: response})
 

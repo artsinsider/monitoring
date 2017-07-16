@@ -58,10 +58,5 @@ export const columns = [
         dataIndex: 'udalena',
         title: 'Удал.',
         sortIndex: 12,
-    },
-    // {
-    //     dataIndex: 'edit',
-    //     title: 'Ред.',
-    //     sortIndex: 13
-    // }
+    }
 ]

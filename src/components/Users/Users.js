@@ -2,8 +2,7 @@ import React, { PureComponent }                           from 'react'
 import { connect }                                    from 'react-redux'
 import { Button, Menu, Dropdown, Icon, Badge, Modal, Spin, Tree } from 'antd';
 import { employeeAddSections }                        from '../../AC/users'
-import { isNil, isEmpty }                                      from 'ramda'
-import {unUser}                                       from './fakeUser'
+import { isEmpty }                                      from 'ramda'
 import { loadSectionsByUserId }                     from '../../AC/sections'
 
 const TreeNode = Tree.TreeNode
@@ -33,7 +32,6 @@ class Users extends PureComponent {
     showModal = () => { this.setState({ visibleModal: true }) }
 
     closeModal = () => {
-        // this.props.form.resetFields()
         this.setState({ visibleModal: false })
     }
 

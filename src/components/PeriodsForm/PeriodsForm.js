@@ -214,8 +214,6 @@ class PeriodsForm extends PureComponent {
                 metod_vichisleniy : this.props.methodActive
             }
             this.props.addNewPeriod(period, resetFields)
-            // this.closeModal()
-
         })
     }
     handleOnRowClick = period => this.setState({ periodChoosed: period })

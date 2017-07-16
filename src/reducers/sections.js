@@ -57,7 +57,6 @@ export default (sections = new initialState(), action) => {
 
     switch (type) {
       case LOAD_ALL_SECTIONS + START:
-        // case LOAD_ALL_SECTIONS_BY_ID + START:
         return sections.set('loading', true)
 
         case LOAD_ALL_SECTIONS + SUCCESS:

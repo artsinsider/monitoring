@@ -5,7 +5,6 @@ import { loadAllPeriodResourcesById }       from '../../AC/periodResources'
 import { loadPeriods, changeCurrentPeriod } from '../../AC/periods'
 import { loadAllSectionsById }              from '../../AC/sections'
 import {isNil}                              from 'ramda'
-import SearchFilter                         from '../TableData/SearchFilter'
 const formInit = Form.create()
 
 class PeriodSelect extends PureComponent {

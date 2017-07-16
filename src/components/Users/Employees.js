@@ -1,9 +1,9 @@
-import React, { PureComponent }                                      from 'react'
-import { connect }                                                   from 'react-redux'
-import { Button, Menu, Dropdown, Icon, Modal, Spin, Tree, Row, Col } from 'antd';
-import { employeeAddSections, getCountForUser }                                       from '../../AC/users'
-import { isNil, isEmpty, uniq }                                      from 'ramda'
-import { loadSectionsByUserId, loadSectionsByParentId }              from '../../AC/sections'
+import React, { PureComponent }                         from 'react'
+import { connect }                                      from 'react-redux'
+import { Button, Modal, Spin, Tree, Row, Col }          from 'antd';
+import { employeeAddSections, getCountForUser }         from '../../AC/users'
+import { isNil, isEmpty }                         from 'ramda'
+import { loadSectionsByUserId, loadSectionsByParentId } from '../../AC/sections'
 import './employee.css'
 
 const TreeNode = Tree.TreeNode
@@ -40,12 +40,7 @@ class Employees extends PureComponent {
         const resKodLen = sheckNode.length;
         for (let kod = 0; kod < resKodLen; kod++) {
             this.props.employeeAddSections(sheckNode[kod], flag ==='EMPTY' ? 'EMPTY' :  userId)
-            // resKodLen === kod + 1 ? this.setState({sheckNode: []}) : this.setState({...this.state})
         }
-    }
-
-    selectedNode = (e) => {
-        console.log('e', e)
     }
 
     onLoadData = (treeNode) => {
@@ -67,7 +62,6 @@ class Employees extends PureComponent {
         const list = []
         const dropDown = (name, sotrudnik, id, count) => {
             const us = this.state.users.filter( r => r.kod == sotrudnik)[0]
-            // const count = rows.filter(resurs => resurs.razdel.razdel== id || resurs.razdel.roditel == id).length
             return <div>
                 {!isNil(us) ?
                     <span style={{ background: us.color }} className="small-badge-employee">{us.familiya[0]}{us.imya[0]}</span>
@@ -89,7 +83,6 @@ class Employees extends PureComponent {
         })
         return list
     }
-    // <span style={{opacity: 0.3}}> ---- </span>
 
     showModal = () => {
         this.props.users.forEach( (user, i) =>  user.color = this.state.colorList[i] )
@@ -109,7 +102,6 @@ class Employees extends PureComponent {
             footer: false
         }
         const count = 0;
-
 
         return (
             <div className="employee" >
@@ -167,7 +159,3 @@ export default connect(state => ({
     sections: state.sections.get('entities').toArray(),
     loading: state.sections.get('loading'),
 }), { employeeAddSections, loadSectionsByUserId, loadSectionsByParentId, getCountForUser })(Employees)
-
-
-// <Icon style={{ color: '#216ae9' }} type="plus-circle-o" onClick={() => this.selectedUser(u.kod, false)}  />&nbsp;&nbsp;
-// <Icon style={{ color: '#e94851' }} type="minus-circle-o" onClick={() => this.selectedUser(u.kod, 'EMPTY')}  />

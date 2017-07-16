@@ -103,11 +103,6 @@ export const closeViweeResources = (resourcesId) => ({
     type: RAC.CLOSE_VIEW_RESOURCES,
 })
 
-/**  Редактирование ресурса */
-// export const openUpdateResources = (resources) => ({
-//     type: RAC.OPEN_UPDATE_RESOURCES,
-//     payload: resources
-// })
 export const openUpdateResources = (resourcesId) => ({
    type: RAC.OPEN_UPDATE_RESOURCES,
     $api: {
@@ -129,8 +124,6 @@ export const openDeleteResources = (resources) => ({
 export const closeDeleteResources = () => ({
     type: RAC.CLOSE_DELETE_RESOURCES,
 })
-
-// v1/resursi/check_tsn?tsn=[string]
 
 export const findTsn = (tsn) => ({
     type: RAC.FIND_TSN,

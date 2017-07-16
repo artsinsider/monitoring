@@ -3,9 +3,9 @@ import {connect}                            from 'react-redux'
 import {Spin, Icon, Tabs, Layout, Button, Progress}   from 'antd'
 import {Resizable, ResizableBox}            from 'react-resizable'
 import SearchFilter                         from './TableData/SearchFilter'
-import Treev2                               from './Sections/Treev2'
-import Treev3                               from './Sections/Treev3'
-import Grid                                 from './Grid'
+//import Treev2                               from './Sections/Treev2'
+//import Treev3                               from './Sections/Treev3'
+//import Grid                                 from './Grid'
 import Admin                                from './Admin'
 import TableData                            from './TableData/TableData'
 import ListActionsAnResources               from './ResourceForm/ListActionsAnResources'
@@ -16,14 +16,14 @@ import DeleteResourceForm                   from './ResourceForm/DeleteResourceF
 import PeriodSelect                         from './PeriodSelect/PeriodSelect'
 import PeriodsForm                          from './PeriodsForm/PeriodsForm'
 import Reports                              from './Reports/Reports'
-import Users                                from './Users/Users'
+//import Users                                from './Users/Users'
 import Employees                            from './Users/Employees'
 import InformationCard                      from './InformationCard/InformationCard'
 import {SectionControls, SectionsTree}      from './Sections'
 import ActionWrapper                        from './ActionWrapper/ActionWrapper'
 import {selectedTabs}                       from '../AC/interfaceAction'
 import {redirect, extiModule}               from '../config/redirect'
-import * as Moduls                          from '../constants/api'
+// import * as Moduls                          from '../constants/api'
 
 const TabPane = Tabs.TabPane;
 const { Footer } = Layout;
@@ -115,17 +115,6 @@ class App extends PureComponent {
                                 </div>
                             </div>
                         </div>
-                            <Footer>
-                                < div className="navigation-services">
-                                    <a className="img-auth" href={Moduls.AUTHORIZATION} onClick={() => extiModule()} rel="noopener noreferrer" title="Авторизация"> </a>
-                                    <a className="img-organization"  href={Moduls.ORG} target="_blank" rel="noopener noreferrer" title="Справочник организаций"> </a>
-                                    <a className="img-mon active" href={Moduls.MON} target="_blank" rel="noopener noreferrer" title="Мониторинг"></a>
-                                    <a className="img-machine" href={Moduls.MACHINE} target="_blank" rel="noopener noreferrer" title="Машины и механизмы"> </a>
-                                    <a href="http://ursip.ru/" target="_blank">
-                                        <img className="img-ursip" src="static/img/ursip-logo.svg" alt="Ursip"/>
-                                    </a>
-                                </div>
-                            </Footer>
                         <UpdateResourceForm/>
                         <DeleteResourceForm/>
                         <Error/>
@@ -142,8 +131,3 @@ export default connect(state => ({
     data: state.periodResources.data,
     interfaceAction: state.interfaceAction.selectedTabs
 }), {selectedTabs})(App)
-
-// {!this.state.blur ? null : <div style={{ width:window.innerWidth, height:window.innerHeight , background: 'rgba(255, 255, 255, 0.5)', zIndex: '999' , position: 'absolute'}} >
-//         <p> Выполнеине операции ...</p>
-//         <Progress className='propgressss' percent={75} format={percent => `${percent} Days`} />
-//     </div>}

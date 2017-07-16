@@ -95,14 +95,6 @@ class SectionControls extends Component {
   }
 
     handleSubmitEdit = (section) => {
-        // const form = this.form
-        // form.validateFields((err, values) => {
-        //     if (!err) {
-        //         return;
-        //     }
-        //     form.resetFields();
-        //
-        // });
         this.setState({ visibleEdit: false});
         this.props.updateSection(section)
     }

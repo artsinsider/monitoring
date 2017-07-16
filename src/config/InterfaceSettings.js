@@ -1,5 +1,8 @@
+/**
+ *  TO DO костыль, ожидаем следущей версии модуля авторизации
+ */
 export const interfaceSettings ={
-    fedoseenkov:{
+    fedoseenko:{
         role: 'user',
         post: 'Главный специалист ',
         first: {
@@ -22,7 +25,7 @@ export const interfaceSettings ={
             vozvrat_sotrudniku: true
         },
     },
-    sovko:{
+    sovkov:{
         role: 'user',
         post: 'Главный специалист ',
         first: {
@@ -45,7 +48,7 @@ export const interfaceSettings ={
             vozvrat_sotrudniku: true
         },
     },
-    karaeva:{
+    dunaeva:{
         role: 'user',
         post: 'Главный специалист ',
         first: {
@@ -68,7 +71,7 @@ export const interfaceSettings ={
             vozvrat_sotrudniku: true
         },
     },
-    klichnikov:{
+    klichkov:{
         role: 'chief',
         post: 'Начальник отдела мониторинга',
         first: {
@@ -91,7 +94,7 @@ export const interfaceSettings ={
             vozvrat_rukovoditelju: true
         },
     },
-    dolotov:{
+    dolotof:{
         role: 'leader',
         post: 'Руководитель департамента',
         first: {

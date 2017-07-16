@@ -86,22 +86,6 @@ class SectionFormEdit extends Component {
         )
     }
 
-    /*renderNestedList(data, parentId) {
-        const list = []
-        data.forEach(item => {
-            const { roditel, kod, nazvanie } = item
-            if (roditel === parentId) {
-                const childs = this.renderNestedList(data, kod)
-                list.push(
-                    childs && childs.length
-                        ? <TreeSelect.TreeNode value={''+kod} key={kod} title={nazvanie}>{childs}</TreeSelect.TreeNode>
-                        : <TreeSelect.TreeNode value={''+kod} key={kod} title={nazvanie} />
-                )
-            }
-        })
-        return list
-    }*/
-
   render() {
     const { sections, visible } = this.props
     return (

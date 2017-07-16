@@ -1,56 +1,21 @@
 import React, { Component }      from 'react'
 import { connect }               from 'react-redux'
-import { Tree, Spin }            from 'antd'
+import { Tree }            from 'antd'
 import * as actionCreators       from '../../AC/sections'
-import { delay }                 from '../../utils'
 import { loadSectionsResources, loadSectionsResourcesForUser } from '../../AC/periodResources'
-import {equals, isEmpty, isNil}                 from 'ramda'
-import {interfaceSettings}   from  '../../config/InterfaceSettings'
+import { isEmpty }                 from 'ramda'
 const TreeNode = Tree.TreeNode
 
 class Treev2 extends Component {
     state = {
         stateSearchValue: '',
         sectionHead: [],
-        section: [],
-        // sectionHead: this.props.sections.filter( sec => sec.roditel == null),
+        section: []
     }
-
-    // componentDidMount = () => {
-    //     this.props.loadResourcesBySection()
-    // }
 
     componentDidMount = () => this.props.loadAllSections()
 
-    // shouldComponentUpdate = (nextProps, nextState) => {
-    //     return this.props.sections !== nextProps.sections || nextState.sections !== this.state.section
-    // }
-
-    // componentWillReceiveProps = (nextProps) => {
-    //     const {sections=[],sectionResources=[]} = nextProps
-    //     if (equals( sections , this.props.sections )){
-    //         return false
-    //     }
-    //     this.setState({
-    //         sectionHead: sections.filter( sec => sec.roditel == null),
-    //         section:   sections
-    //     })
-    //     return true
-    // }
-
-    // generateTreeNodes =(treeNode) => {
-    //     // const arr = [];
-    //     const key = treeNode.props.eventKey;
-    //     const childerbNode = this.state.section.filter( node => node.roditel == key)
-    //     // for (let i = 0; i < 3; i++) {
-    //     //     arr.push({ name: `leaf ${key}-${i}`, key: `${key}-${i}` });
-    //     // }
-    //
-    //     return childerbNode;
-    // }
-
     setLeaf = (treeData, curKey, level) =>  {
-        // console.log('setLeaf',treeData, curKey, level)
         const loopLeaf = (data, lev) => {
             const l = lev - 1;
             data.forEach((item) => {
@@ -70,35 +35,12 @@ class Treev2 extends Component {
     }
 
     getNewTreeData = (treeData, curKey, child, section) => {
-        // console.log('getNewTreeData',treeData, curKey, child, level)
-        // const loop = (data) => {
-        //     data.forEach((item) => {
-        //         if (item.kod == curKey || curKey == item.roditel){
-        //             if (item.children) {
-        //                 loop(item.children);
-        //             } else {
-        //                 item.children = child;
-        //             }
-        //         }
-        //         loop(item.children)
-        //     });
-        // };
-
-        // loop(treeData);
-        // this.setLeaf(treeData, curKey, level);
         const ggg  = section.filter( node => node.kod == curKey)
         ggg[0].children = child
-
-
         this.setState({ sectionHead: ggg });
     }
 
-    onSelect = (info) => {
-        console.log('selected', info);
-    }
-
     onLoadData = (treeNode) => {
-    console.log(this.state)
         const key = treeNode.props.eventKey;
         const childerbNode = this.props.sections.filter( node => node.roditel == key)
         this.setState({isLeaf : !isEmpty(childerbNode), sectionHead: this.props.sectionHead})
@@ -111,7 +53,7 @@ class Treev2 extends Component {
 
 
     render() {
-        const { loading, sections,sectionHead,  sectionResources=[] } = this.props
+        const { sectionHead } = this.props
 
         const loop = data => data.map((item) => {
             if (item.children) {

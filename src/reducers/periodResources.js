@@ -24,11 +24,11 @@ const initialState = {
 
 export default (periodResources = initialState, action) => {
     const {type, payload, response, error, data, flag, props} = action;
+
     switch (type) {
         case AC.LOAD_ALL_PERIOD_RESOURCES + START:
         case AC.LOAD_SECTIONS_RESOURCES + START:
         case AC.LOAD_PERIOD_RESOURCES_BY_ID + START:
-        case AC.LOAD_PERIOD_RESOURCES_BY_RESOURCES_TYPE + START:
         case AC.LOAD_SECTIONS_RESOURCES_FOR_USER_START:
         case AC.LOAD_ALL_ORGANIZATION + START:
             return ({...periodResources, loading: true})
@@ -51,7 +51,6 @@ export default (periodResources = initialState, action) => {
 
         case AC.LOAD_SECTIONS_RESOURCES_FOR_USER_SECOND:
             return periodResourcesHelper.concatDataPeriodResources({...periodResources, dataSecond: payload});
-
 
         /*** Загружает русурсы по разделу  */
         case AC.LOAD_SECTIONS_RESOURCES + SUCCESS:
@@ -106,13 +105,9 @@ export default (periodResources = initialState, action) => {
         case RES.DELETE_RESOURCES + SUCCESS:
             return periodResourcesHelper.deleteResources({...periodResources , deleteResourcesData: payload })
 
-        // case AC.LOAD_PERIOD_RESOURCES_BY_RESOURCES_TYPE+ SUCCESS:
-        //     return ({...periodResources, data: response, loading: false})
-
         case RES.CHANGE_STATUS_RESOURCES + SUCCESS:
             notification.info({message: 'Статус изменен'  , description: ''})
             return ({...periodResources , fullStatusResources: payload })
-
 
         case AC.LOAD_SECTIONS_RESOURCES + FAIL:
         case AC.LOAD_PERIOD_RESOURCES_BY_ID + FAIL:

@@ -1,13 +1,8 @@
 import React, { PureComponent }      from 'react'
-import { connect }               from 'react-redux'
-import { Tree, TreeSelect, Badge}            from 'antd'
-import * as actionCreators       from '../../AC/sections'
-import * as users                  from '../../AC/users'
-import { delay }                 from '../../utils'
-import { loadSectionsResources, loadSectionsResourcesForUser } from '../../AC/periodResources'
-import { loadSectionsByParentId } from '../../AC/sections'
-import {equals, isEmpty, isNil}  from 'ramda'
-import {interfaceSettings}       from  '../../config/InterfaceSettings'
+import { connect }                   from 'react-redux'
+import { Tree, TreeSelect }          from 'antd'
+import { loadSectionsByParentId }    from '../../AC/sections'
+import { isEmpty }                   from 'ramda'
 const TreeNode = Tree.TreeNode
 
 class Treev3 extends PureComponent {
@@ -16,9 +11,6 @@ class Treev3 extends PureComponent {
     }
 
     onLoadData = (treeNode) => {
-        //TBD: Rewrite to check, if sections.key isLeaf is null or false.
-        // If false => load stuff
-        // If true => reject
         const { sections } = this.props
         const key = treeNode.props.eventKey;
         return new Promise((resolve, reject) => {
@@ -38,10 +30,6 @@ class Treev3 extends PureComponent {
         data.forEach(item => {
         const { roditel, kod, nazvanie, isLeaf } = item
         if (roditel === parentId) {
-            // const countRes = (id, name) => {
-            //     const count = rows.filter(resurs => resurs.razdel.razdel== id || resurs.razdel.roditel == id).length
-            //     return isEmpty(rows) ? name : <div><Badge overflowCount={99999} count={count} style={{ backgroundColor: '#87d068' }} /> {name}</div>
-            // }
             const children = this.renderNestedList(data, kod)
             list.push(
                 children && children.length

@@ -2,14 +2,6 @@ import * as actionTypes from '../constants/actionTypes'
 import * as RAC from '../constants/resourcesActionType'
 import {MON_API_HOST, ADMIN_API_HOST, ORG_API_HOST} from '../constants/api'
 
-// export const loadPeriodResourcesByResourcesType = (id) => ({
-//         type: actionTypes.LOAD_PERIOD_RESOURCES_BY_RESOURCES_TYPE,
-//             $api:
-//         {
-//             url: `${MON_API_HOST}resursiperioda/zapros?period=${id.periodSelected}&razdel=${id.selectedType}`
-//         }
-// })
-
 export const loadSectionsResources = (id) => {
     return (dispatch, getState) => {
         dispatch({
@@ -159,20 +151,6 @@ export function getResourcesUpdate(data) {
     }
 }
 
-// export const loadSectionsResourcesForUser = (data) => ({
-//     type: actionTypes.LOAD_SECTIONS_RESOURCES_FOR_USER_FIRST,
-//     $api: {
-//         url: `${MON_API_HOST}resursiperioda/zapros?period=${data.periodSelected.kod}&status_deistviya=5&status=1&sotrudnik=${data.userData.kod}`
-//     }
-// })
-//
-// export const loadSectionsResourcesForUserSecond = (data) => ({
-//     type: actionTypes.LOAD_SECTIONS_RESOURCES_FOR_USER_SECOND,
-//     $api: {
-//         url: `${MON_API_HOST}resursiperioda/zapros?period=${data.periodSelected.kod}&status_deistviya=3&status=1&sotrudnik=${data.userData.kod}`
-//     }
-// })
-
 export const loadSectionsResourcesForUser = (sectionId) => {
     return (dispatch, getState) => {
         dispatch({
@@ -211,5 +189,3 @@ export const createVendorPrice = resources => ({
         headers: { 'Content-Type': 'application/json'  }
     }
 })
-//&status_deistviya=5&status=1
-//&status_deistviya=3&status=1
